@@ -11,6 +11,6 @@ hamlet_lab: # the lab's GitHub, where the code for your papers lives
 linkedin_username: g%C3%B6ksenin-y%C3%BCksel-24a2371b2 # the part after linkedin.com/in/
 cv_pdf: /assets/rendercv/rendercv_output/Goksenin_Yuksel_CV.pdf # generated from _data/cv.yml
 custom_social:
-  logo: hf-icon # one-color Hugging Face logo, styled in _sass/_themes.scss
+  logo: hf-logo # Hugging Face logo in its own colors, sized in _sass/_themes.scss
   title: Hugging Face
   url: https://huggingface.co/labhamlet

@@ -43,7 +43,7 @@ cv:
         start_date: 2024-09
         end_date: 2028-01
         highlights:
-          - "Expected graduation: January 2028. Research: machine hearing, self-supervised (spatial) audio and speech representation learning, and spatial audio LLMs."
+          - "Research: machine hearing, self-supervised (spatial) audio and speech representation learning, and spatial audio LLMs."
           - "AudioSphere (NeurIPS 2026): first sound event localization and detection from a frozen self-supervised backbone; 1.9° median direction-of-arrival error on a planar microphone array."
           - "SpeechJEPA beats wav2vec 2.0 with one hour of labels while using about 17× fewer training FLOPs."
           - "Bearings raises the location-aware SELD F-score from below 4 to 50 on TAU-NIGENS 2021."

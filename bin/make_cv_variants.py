@@ -22,14 +22,14 @@ VARIANTS = {
     "spatial_audio": {
         "headline": "PhD Candidate in AI · Machine hearing and spatial audio",
         "Research Interests": ["Machine hearing", "Spatial audio", "Representation learning", "Speech"],
-        "phd_highlights": ["Expected graduation", "AudioSphere", "Bearings", "SpeechJEPA", "Supervisors"],
+        "phd_highlights": ["Research:", "AudioSphere", "Bearings", "SpeechJEPA", "Supervisors"],
         "Under Review": ["Bearings", "EquiSELD", "SpeechJEPA", "WavJEPA"],
         "Technical Skills": ["Audio & signal processing", "Deep learning", "Distributed training", "Languages & tools"],
     },
     "speech": {
         "headline": "PhD Candidate in AI · Self-supervised speech and audio representation learning",
         "Research Interests": ["Speech", "Representation learning", "Machine hearing", "Spatial audio"],
-        "phd_highlights": ["Expected graduation", "SpeechJEPA", "AudioSphere", "Bearings", "Supervisors"],
+        "phd_highlights": ["Research:", "SpeechJEPA", "AudioSphere", "Bearings", "Supervisors"],
         "Under Review": ["SpeechJEPA", "WavJEPA", "Bearings", "EquiSELD"],
         "Technical Skills": ["Deep learning", "Distributed training", "Languages & tools", "Audio & signal processing"],
     },
