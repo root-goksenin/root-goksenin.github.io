@@ -32,6 +32,19 @@
 #
 # Put titles in quotes when they contain a colon.
 
+# The text at the top of the page and above each list. Markdown works: **bold**, [link](https://...).
+intro: |
+  Reading is where most of my research starts. This page tracks the papers closest to my work: spatial audio understanding, self-supervised audio and speech representation learning, and audio-language models. Keeping the list public keeps me honest about reading what I save, and lets collaborators, students and anyone curious see what I'm thinking about.
+
+  Know a paper that belongs here? [Send it to me](mailto:goksenin.yuksel@donders.ru.nl).
+
+to_read_intro: >
+  Papers I've saved and plan to read next. Most are about spatial audio, audio-visual learning and
+  audio-language models.
+
+read_intro: >
+  Papers I've read.
+
 papers:
   - arxiv: https://arxiv.org/abs/2307.04760
     title: "Learning Spatial Features from Audio-Visual Correspondence in Egocentric Videos"

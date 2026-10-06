@@ -2,7 +2,7 @@
 layout: page
 permalink: /reading/
 title: reading
-description: Papers I want to read and papers I have read.
+description: What I'm reading in machine hearing, and why.
 nav: true
 nav_order: 3
 ---
@@ -24,13 +24,19 @@ nav_order: 3
   .reading-meta { color: var(--global-text-color-light); font-size: 0.9rem; }
   .reading-note { margin-top: 0.4rem; font-size: 0.95rem; }
   .reading-empty { color: var(--global-text-color-light); }
+  .reading-intro p { margin-bottom: 0.75rem; }
+  .reading-intro { margin-bottom: 1.25rem; }
+  .reading-section-intro { color: var(--global-text-color-light); margin: -0.25rem 0 1rem; }
 </style>
 
-{% assign papers = site.data.reading_list.papers %}
+{% assign rl = site.data.reading_list %}
+{% assign papers = rl.papers %}
 {% assign to_read = papers | where: "status", "to-read" %}
 {% assign done = papers | where: "status", "read" %}
 
 <div class="publications">
+
+{% if rl.intro %}<div class="reading-intro">{{ rl.intro | markdownify }}</div>{% endif %}
 
 <p class="reading-summary">{{ done.size | default: 0 }} read · {{ to_read.size | default: 0 }} to read</p>
 
@@ -40,6 +46,8 @@ nav_order: 3
 {% else %}{% assign items = done %}{% assign heading = "Read" %}{% assign badge = "Read" %}{% assign color = "#2e8b57" %}{% endif %}
 
 <h2 class="pub-group">{{ heading }} <span class="count">({{ items.size | default: 0 }})</span></h2>
+{% if group == "to-read" %}{% assign section_intro = rl.to_read_intro %}{% else %}{% assign section_intro = rl.read_intro %}{% endif %}
+{% if section_intro %}<p class="reading-section-intro">{{ section_intro | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>{% endif %}
 
 {% if items and items.size > 0 %}
 <ol class="bibliography">

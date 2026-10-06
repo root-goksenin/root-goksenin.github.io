@@ -224,6 +224,21 @@ a:hover > .hf-logo {
   opacity: 0.8;
 }
 
+// Lines under the profile photo (affiliation, city, citizenship): the site's text font instead of the
+// theme's monospace, one line each with a little space in between. "div." outranks the theme's rule.
+.profile div.more-info {
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--global-text-color-light);
+  margin-top: 0.75rem;
+}
+
+.profile div.more-info p {
+  display: block;
+  margin: 0 0 0.5rem;
+}
+
 // Venue badges on the publications and reading pages: always white text. The theme only makes
 // linked badges white, so badges without a url in _data/venues.yml (MLRC, Under review) showed
 // black text in light mode, and the reading-list badges showed dark text in dark mode.
