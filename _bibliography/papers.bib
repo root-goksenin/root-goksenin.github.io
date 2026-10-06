@@ -4,9 +4,9 @@
 % Each entry has a pubgroup field that decides its section on the publications page:
 %   reviewed = Peer-Reviewed Publications, underreview = Under Review, preprint = Preprints
 
-% TODO: update the title if the camera-ready version differs, and add html/pdf/code links once AudioSphere is public.
+% TODO: update the title if the camera-ready version differs, and add html/pdf links once AudioSphere is public.
 @inproceedings{yuksel2026audiosphere,
-  abbr        = {NeurIPS},
+  abbr        = {NeurIPS 2026},
   title       = {AudioSphere: Towards Self-Supervised Spatial Audio Representation Models},
   author      = {Yüksel, Göksenin and van Gerven, Marcel and van der Heijden, Kiki},
   booktitle   = {Advances in Neural Information Processing Systems (NeurIPS)},
@@ -15,6 +15,7 @@
   preview     = {audiosphere.png},
   bibtex_show = {true},
   selected    = {true},
+  code        = {https://github.com/labhamlet/AudioSphere},
   pubgroup    = {reviewed}
 }
 
@@ -27,6 +28,7 @@
   abstract    = {Joint-embedding predictive architectures (JEPAs) were reported to collapse on speech unless anchored by explicit input-level clustering. SpeechJEPA is a clustering-free JEPA that learns speech representations entirely in latent space, without discrete targets, negative samples or auxiliary grounding. A mask-conditioned convolutional predictor regresses several target groups from a single shared context encoding, so the encoder runs once per utterance. Pre-trained on LibriSpeech in 13.8 GPU-hours on one H100, SpeechJEPA beats wav2vec 2.0 with one hour of labels at about 17x fewer training FLOPs, and a 64-GPU-hour model outperforms wav2vec 2.0, HuBERT and WavLM at every labeled-data budget.},
   code        = {https://github.com/labhamlet/SpeechJEPA},
   selected    = {true},
+  preview     = {speechjepa.png},
   pubgroup    = {underreview}
 }
 
@@ -41,6 +43,8 @@
   pdf         = {https://arxiv.org/pdf/2609.23152},
   bibtex_show = {true},
   selected    = {true},
+  code        = {https://github.com/labhamlet/Bearings},
+  preview     = {bearings.png},
   pubgroup    = {underreview}
 }
 
@@ -55,6 +59,8 @@
   pdf         = {https://arxiv.org/pdf/2609.23156},
   bibtex_show = {true},
   selected    = {true},
+  code        = {https://github.com/labhamlet/EquiSELD},
+  preview     = {equiseld.png},
   pubgroup    = {underreview}
 }
 
@@ -71,6 +77,7 @@
   website     = {https://huggingface.co/labhamlet/wavjepa-nat-base},
   bibtex_show = {true},
   selected    = {true},
+  preview     = {wavjepa.png},
   pubgroup    = {underreview}
 }
 
@@ -86,6 +93,7 @@
   code        = {https://github.com/labhamlet},
   bibtex_show = {true},
   selected    = {true},
+  preview     = {gram.png},
   pubgroup    = {preprint}
 }
 

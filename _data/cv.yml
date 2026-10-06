@@ -82,6 +82,7 @@ cv:
         journal: NeurIPS 2026
         publisher: NeurIPS 2026
         date: 2026-09
+        url: https://github.com/labhamlet/AudioSphere
 
       - title: "University of Amsterdam at the CLEF 2024 SimpleText Track"
         authors:
