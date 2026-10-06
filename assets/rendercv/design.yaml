@@ -1,0 +1,16 @@
+# for more options, see https://docs.rendercv.com/user_guide/yaml_input_structure/design/
+design:
+  theme: classic
+  page:
+    size: a4
+    show_footer: false
+    show_top_note: false
+    top_margin: 0.55in
+    bottom_margin: 0.55in
+    left_margin: 0.6in
+    right_margin: 0.6in
+  section_titles:
+    space_above: 0.35cm
+    space_below: 0.25cm
+  sections:
+    space_between_regular_entries: 0.85em
