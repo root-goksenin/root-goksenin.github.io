@@ -1,0 +1,79 @@
+---
+layout: page
+permalink: /reading/
+title: reading
+description: Papers I want to read and papers I have read.
+nav: true
+nav_order: 3
+---
+
+<!-- _pages/reading.html: the entries come from _data/reading_list.yml -->
+
+<style>
+  .publications h2.pub-group {
+    color: var(--global-text-color);
+    font-size: 1.5rem;
+    font-weight: 400;
+    border-top: 1px solid var(--global-divider-color);
+    padding-top: 1rem;
+    margin-top: 2.5rem;
+  }
+  .publications h2.pub-group:first-of-type { margin-top: 1rem; }
+  .publications h2.pub-group .count { color: var(--global-text-color-light); font-size: 1.1rem; }
+  .reading-summary { color: var(--global-text-color-light); margin-bottom: 0.5rem; }
+  .reading-meta { color: var(--global-text-color-light); font-size: 0.9rem; }
+  .reading-note { margin-top: 0.4rem; font-size: 0.95rem; }
+  .reading-empty { color: var(--global-text-color-light); }
+</style>
+
+{% assign papers = site.data.reading_list.papers %}
+{% assign to_read = papers | where: "status", "to-read" %}
+{% assign done = papers | where: "status", "read" %}
+
+<div class="publications">
+
+<p class="reading-summary">{{ done.size | default: 0 }} read · {{ to_read.size | default: 0 }} to read</p>
+
+{% assign groups = "to-read,read" | split: "," %}
+{% for group in groups %}
+{% if group == "to-read" %}{% assign items = to_read %}{% assign heading = "To read" %}{% assign badge = "To read" %}{% assign color = "#2f6fde" %}
+{% else %}{% assign items = done %}{% assign heading = "Read" %}{% assign badge = "Read" %}{% assign color = "#2e8b57" %}{% endif %}
+
+<h2 class="pub-group">{{ heading }} <span class="count">({{ items.size | default: 0 }})</span></h2>
+
+{% if items and items.size > 0 %}
+<ol class="bibliography">
+{% for p in items %}
+{% comment %} arXiv papers link to arXiv; papers that are not on arXiv link to their url (or pdf). {% endcomment %}
+{% assign id = p.arxiv %}
+{% if id contains "arxiv.org/" %}{% assign id = id | split: "/" | last %}{% endif %}
+{% if id %}{% capture link %}https://arxiv.org/abs/{{ id }}{% endcapture %}{% else %}{% assign link = p.url | default: p.pdf %}{% endif %}
+{% comment %} "CVPR 2024 · arXiv:2307.04760", or "arXiv:2609.23407, 2026" when there is no venue {% endcomment %}
+{% capture meta %}{% if p.venue %}{{ p.venue }}{% endif %}{% if id %}{% if p.venue %} · {% endif %}arXiv:{{ id }}{% endif %}{% unless p.venue %}{% if p.year %}{% if id %}, {% endif %}{{ p.year }}{% endif %}{% endunless %}{% endcapture %}
+<li>
+<div class="row">
+<div class="col col-sm-2 abbr"><abbr class="badge rounded w-100" style="background-color:{{ color }}">{{ badge }}</abbr></div>
+<div class="col-sm-10">
+<div class="title">{% if link %}<a href="{{ link }}">{{ p.title | default: id }}</a>{% else %}{{ p.title }}{% endif %}</div>
+{% if p.authors %}
+<div class="author">{% if p.authors.size > 6 and p.authors.first %}{{ p.authors | slice: 0, 5 | join: ", " }}, et al.{% else %}{{ p.authors | join: ", " }}{% endif %}</div>
+{% endif %}
+<div class="periodical reading-meta">{% if meta != "" %}<em>{{ meta }}</em>{% endif %}{% if group == "read" and p.read_on %}{% if meta != "" %} · {% endif %}read {{ p.read_on | date: "%b %-d, %Y" }}{% elsif p.added %}{% if meta != "" %} · {% endif %}added {{ p.added | date: "%b %-d, %Y" }}{% endif %}</div>
+{% if p.note %}<div class="reading-note">{{ p.note | markdownify | remove: "<p>" | remove: "</p>" }}</div>{% endif %}
+<div class="links">
+{% if id %}<a href="https://arxiv.org/abs/{{ id }}" class="btn btn-sm z-depth-0" role="button">arXiv</a>{% endif %}
+{% if p.url %}<a href="{{ p.url }}" class="btn btn-sm z-depth-0" role="button">Paper</a>{% endif %}
+{% if p.pdf %}<a href="{{ p.pdf }}" class="btn btn-sm z-depth-0" role="button">PDF</a>{% elsif id %}<a href="https://arxiv.org/pdf/{{ id }}" class="btn btn-sm z-depth-0" role="button">PDF</a>{% endif %}
+</div>
+</div>
+</div>
+</li>
+{% endfor %}
+</ol>
+{% else %}
+<p class="reading-empty">{% if group == "to-read" %}Nothing queued right now.{% else %}Nothing marked as read yet.{% endif %}</p>
+{% endif %}
+
+{% endfor %}
+
+</div>

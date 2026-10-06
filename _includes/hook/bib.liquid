@@ -1,0 +1,10 @@
+{% comment %}
+  Called by the theme's bib layout just before it builds the venue line of a paper.
+  Papers under review (pubgroup = {underreview} in papers.bib) show the venue alone, e.g.
+  "Under review at ICASSP 2027" instead of "Under review at ICASSP 2027, 2026".
+  Once a paper is accepted and its pubgroup is changed to {reviewed}, the year shows again.
+{% endcomment %}
+{% if entry.pubgroup == 'underreview' %}
+  {% assign entryyear = '' %}
+  {% assign entrymonth = '' %}
+{% endif %}

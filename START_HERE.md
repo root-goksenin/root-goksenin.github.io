@@ -37,6 +37,5 @@ Check:
 | Change the bio | `_pages/about.md` |
 | Update the CV | `_data/cv.yml`. On push, the **Render a CV** action rebuilds `assets/rendercv/rendercv_output/Goksenin_Yuksel_CV.pdf` (linked from the site) plus two team-specific versions, `Goksenin_Yuksel_CV_spatial_audio.pdf` and `Goksenin_Yuksel_CV_speech.pdf`. Their order of interests, PhD results and papers under review is set in `bin/make_cv_variants.py` |
 | Change the photo | replace `assets/img/prof_pic.jpg` |
+| Add to the reading list | `_data/reading_list.yml`. Paste an arXiv link with `status: to-read`; change it to `read` when you are done. Title and authors are filled in from arXiv when the site is built. For a paper that isn't on arXiv, give its link, title, authors and year instead (the comments at the top of the file show how). On your phone, use the GitHub app or the pencil icon on github.com |
 | Citation counts | filled in automatically from Google Scholar three times a week (**Update Google Scholar citations** action) |
-
-Tip: add a thumbnail for GRAM and WavJEPA too (for example Figure 1 of each paper). Recruiters skim the images first.
