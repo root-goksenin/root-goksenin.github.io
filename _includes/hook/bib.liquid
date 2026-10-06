@@ -1,10 +1,15 @@
 {% comment %}
   Called by the theme's bib layout just before it builds the venue line of a paper.
-  Papers under review (pubgroup = {underreview} in papers.bib) show the venue alone, e.g.
-  "Under review at ICASSP 2027" instead of "Under review at ICASSP 2027, 2026".
+  The year is left out when it would only repeat information:
+  - papers under review (pubgroup = {underreview} in papers.bib) show the venue alone, e.g.
+    "Under review at ICASSP 2027" instead of "Under review at ICASSP 2027, 2026";
+  - when the venue already names the year, e.g. "NeurIPS 2023 Main Hall Poster, ...", it is not
+    repeated at the end.
   Once a paper is accepted and its pubgroup is changed to {reviewed}, the year shows again.
 {% endcomment %}
-{% if entry.pubgroup == 'underreview' %}
+{% assign venue_text = entrytype | strip_html %}
+{% assign year_text = entry.year | append: "" %}
+{% if entry.pubgroup == 'underreview' or venue_text contains year_text %}
   {% assign entryyear = '' %}
   {% assign entrymonth = '' %}
 {% endif %}
