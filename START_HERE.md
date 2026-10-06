@@ -30,6 +30,31 @@ Check:
 
 ## 3. Day-to-day updates
 
+Every push to `main` redeploys the site; it's live a few minutes later (watch **Actions → Deploy site**). You can edit a file on github.com (pencil icon → **Commit changes**), or work in your local folder:
+
+```bash
+git pull            # first: the Render a CV action commits new CV PDFs to the repository
+# ...edit files...
+git add -A
+git commit -m "Describe the change"
+git push
+```
+
+To update from a new `goksenin-website.zip`:
+
+```bash
+git pull
+unzip -o ~/Downloads/goksenin-website.zip -d /tmp/site-update
+cp -R /tmp/site-update/goksenin-website/. .   # the "/." also copies hidden files such as .github
+git add -A
+git commit -m "Update site"
+git push
+```
+
+Two things to avoid:
+- Copying files in Finder: it hides the `.github` folder and other files whose names start with a dot. Without `.github/workflows`, pushes stop deploying the site.
+- **Re-run jobs** on an old Deploy site run: a re-run rebuilds the commit that run started from. To deploy by hand, use **Actions → Deploy site → Run workflow**, which builds the latest commit.
+
 | To… | Edit |
 |---|---|
 | Add a paper | `_bibliography/papers.bib`. Set `pubgroup = {reviewed}`, `{underreview}` or `{preprint}` to choose its section (when a paper is accepted, change it to `reviewed`). Add `selected = {true}` to show it on the homepage, and `preview = {file.png}` with the image in `assets/img/publication_preview/`. Add it to the matching section of `_data/cv.yml` too |
