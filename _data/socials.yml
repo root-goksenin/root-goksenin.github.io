@@ -1,0 +1,16 @@
+# this file contains the social media links and usernames of the author
+# the socials will be displayed in the order they are defined here
+# for more information, please refer to the documentation of jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
+email: goksenin.yuksel@donders.ru.nl # your email address
+scholar_userid: CWdDFfAAAAAJ # your Google Scholar ID
+github_username: root-goksenin # your GitHub username
+hamlet_lab: # the lab's GitHub, where the code for your papers lives
+  logo: fa-solid fa-code
+  title: HAMLET lab GitHub
+  url: https://github.com/labhamlet
+linkedin_username: g%C3%B6ksenin-y%C3%BCksel-24a2371b2 # the part after linkedin.com/in/
+cv_pdf: /assets/rendercv/rendercv_output/Goksenin_Yuksel_CV.pdf # generated from _data/cv.yml
+custom_social:
+  logo: https://huggingface.co/front/assets/huggingface_logo-noborder.svg
+  title: Hugging Face
+  url: https://huggingface.co/labhamlet

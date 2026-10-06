@@ -1,0 +1,178 @@
+---
+---
+
+% Each entry has a pubgroup field that decides its section on the publications page:
+%   reviewed = Peer-Reviewed Publications, underreview = Under Review, preprint = Preprints
+
+% TODO: update the title if the camera-ready version differs, and add html/pdf/code links once AudioSphere is public.
+@inproceedings{yuksel2026audiosphere,
+  abbr        = {NeurIPS},
+  title       = {AudioSphere: Towards Self-Supervised Spatial Audio Representation Models},
+  author      = {Yüksel, Göksenin and van Gerven, Marcel and van der Heijden, Kiki},
+  booktitle   = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year        = {2026},
+  abstract    = {Recent audio embedding models learn general-purpose representations that transfer across clip- and frame-level tasks, yet they operate almost exclusively on single-channel signals and are blind to spatial structure. We introduce AudioSphere, a multi-channel masked autoencoder trained on Ambisonics recordings that reconstructs both spectral content and directional cues via a joint spatiotemporal masking strategy. Alongside the model, we release RealSELD, a standardized benchmark for evaluating frozen backbones on real-world multi-channel sound event localization and detection (SELD). AudioSphere enables, for the first time, SELD with a frozen self-supervised backbone, while matching or exceeding prior general-purpose audio embedding models on the HEAR benchmark.},
+  preview     = {audiosphere.png},
+  bibtex_show = {true},
+  selected    = {true},
+  pubgroup    = {reviewed}
+}
+
+@article{yuksel2026speechjepa,
+  abbr        = {Under review},
+  title       = {SpeechJEPA: Clustering-Free Latent Prediction for Compute-Efficient Speech Representation Learning},
+  author      = {Yüksel, Göksenin and van Gerven, Marcel and van der Heijden, Kiki},
+  journal     = {Under review at ICASSP 2027},
+  year        = {2026},
+  abstract    = {Joint-embedding predictive architectures (JEPAs) were reported to collapse on speech unless anchored by explicit input-level clustering. SpeechJEPA is a clustering-free JEPA that learns speech representations entirely in latent space, without discrete targets, negative samples or auxiliary grounding. A mask-conditioned convolutional predictor regresses several target groups from a single shared context encoding, so the encoder runs once per utterance. Pre-trained on LibriSpeech in 13.8 GPU-hours on one H100, SpeechJEPA beats wav2vec 2.0 with one hour of labels at about 17x fewer training FLOPs, and a 64-GPU-hour model outperforms wav2vec 2.0, HuBERT and WavLM at every labeled-data budget.},
+  code        = {https://github.com/labhamlet/SpeechJEPA},
+  selected    = {true},
+  pubgroup    = {underreview}
+}
+
+@article{yuksel2026bearings,
+  abbr        = {Under review},
+  title       = {Bearings: Self-Supervised Soundfield Embeddings from First-Order Ambisonics},
+  author      = {Yüksel, Göksenin and van Gerven, Marcel and van der Heijden, Kiki},
+  journal     = {Under review at ICASSP 2027; arXiv:2609.23152},
+  year        = {2026},
+  abstract    = {Audio encoders capture acoustic content well but have no notion of where sounds come from. Bearings learns spatial audio representations without labels by training a masked autoencoder on first-order Ambisonics, with a decoder conditioned on frozen embeddings from single-channel acoustic encoders. The resulting soundfield embeddings can be combined with different frozen acoustic models without retraining either one. Fused with acoustic representations for sound event localization and detection, they raise the location-dependent F-score from below 4 to 50 on TAU-NIGENS 2021 and to 39 on STARSS23.},
+  html        = {https://arxiv.org/abs/2609.23152},
+  pdf         = {https://arxiv.org/pdf/2609.23152},
+  bibtex_show = {true},
+  selected    = {true},
+  pubgroup    = {underreview}
+}
+
+@article{yuksel2026equiseld,
+  abbr        = {Under review},
+  title       = {EquiSELD: Efficient training of equivariant sound event localization and detection networks},
+  author      = {Yüksel, Göksenin and van Gerven, Marcel and van der Heijden, Kiki},
+  journal     = {Under review at ICASSP 2027; arXiv:2609.23156},
+  year        = {2026},
+  abstract    = {First-order Ambisonics signals have an exact O(3) symmetry: rotating or reflecting the signal changes the direction of arrival of the sound sources but not the sources themselves. EquiSELD processes Ambisonics as paired streams of O(3)-invariant scalars and equivariant intensity vectors, producing an invariant activity magnitude and an equivariant direction of arrival with a Multi-ACCDOA readout. It outperforms prior equivariant approaches with far fewer parameters and less training time, outperforms non-equivariant SELD networks on simulated scenes, and is competitive on real-world recordings.},
+  html        = {https://arxiv.org/abs/2609.23156},
+  pdf         = {https://arxiv.org/pdf/2609.23156},
+  bibtex_show = {true},
+  selected    = {true},
+  pubgroup    = {underreview}
+}
+
+@article{yuksel2025wavjepa,
+  abbr        = {Under review},
+  title       = {WavJEPA: Semantic learning unlocks robust audio foundation models for raw waveforms},
+  author      = {Yüksel, Göksenin and Guetschel, Pierre and Tangermann, Michael and van Gerven, Marcel and van der Heijden, Kiki},
+  journal     = {Under review at IEEE/ACM Transactions on Audio, Speech, and Language Processing; arXiv:2509.23238},
+  year        = {2025},
+  abstract    = {Learning audio representations from raw waveforms overcomes key limitations of spectrogram-based audio representation learning, such as the latency of spectrogram computation and the loss of phase information. We propose WavJEPA, a waveform-based version of the Joint-Embedding Predictive Architecture that learns high-level semantic representations, substantially outperforming state-of-the-art time-domain audio foundation models while requiring considerably fewer computational resources. We also present WavJEPA-Nat, a multi-channel extension trained on simulated naturalistic scenes that is highly robust to reverberation and noise.},
+  html        = {https://arxiv.org/abs/2509.23238},
+  pdf         = {https://arxiv.org/pdf/2509.23238},
+  code        = {https://github.com/labhamlet/wavjepa},
+  website     = {https://huggingface.co/labhamlet/wavjepa-nat-base},
+  bibtex_show = {true},
+  selected    = {true},
+  pubgroup    = {underreview}
+}
+
+@article{yuksel2025gram,
+  abbr        = {arXiv},
+  title       = {GRAM: Spatial general-purpose audio representations},
+  author      = {Yüksel, Göksenin and van Gerven, Marcel and van der Heijden, Kiki},
+  journal     = {arXiv preprint arXiv:2506.00934},
+  year        = {2025},
+  abstract    = {Most audio foundation models ignore the spatial structure of real-world sound scenes. We propose GRAM, a general-purpose real-world audio model that uses a multi-channel masked autoencoder to efficiently learn spatial audio representations. We evaluate GRAM and other audio foundation models on high-quality simulations of naturalistic spatial acoustic environments and on real-world recordings, and release two complementary benchmark task suites: NatHEAR and RealSELD.},
+  html        = {https://arxiv.org/abs/2506.00934},
+  pdf         = {https://arxiv.org/pdf/2506.00934},
+  code        = {https://github.com/labhamlet},
+  bibtex_show = {true},
+  selected    = {true},
+  pubgroup    = {preprint}
+}
+
+@inproceedings{bakker2024clef,
+  abbr        = {CLEF},
+  title       = {University of Amsterdam at the CLEF 2024 SimpleText Track},
+  author      = {Bakker, Jan and Yüksel, Göksenin and Kamps, Jaap},
+  booktitle   = {Working Notes of the Conference and Labs of the Evaluation Forum (CLEF 2024)},
+  editor      = {Faggioli, Guglielmo and Ferro, Nicola and Galuščáková, Petra and García Seco de Herrera, Alba},
+  series      = {CEUR Workshop Proceedings},
+  volume      = {3740},
+  pages       = {3182--3194},
+  publisher   = {CEUR-WS.org},
+  year        = {2024},
+  html        = {https://ceur-ws.org/Vol-3740/},
+  pdf         = {https://ceur-ws.org/Vol-3740/paper-310.pdf},
+  bibtex_show = {true},
+  pubgroup    = {reviewed}
+}
+
+@inproceedings{yuksel2024style,
+  abbr        = {MIDL},
+  title       = {Style Randomization Improves the Robustness of Breast Density Estimation in MR Images},
+  author      = {Yüksel, Göksenin and Eppenhof, Koen and Kroes, Jaap and Worring, Marcel},
+  booktitle   = {Proceedings of the 7th International Conference on Medical Imaging with Deep Learning (MIDL)},
+  series      = {Proceedings of Machine Learning Research},
+  volume      = {250},
+  pages       = {1841--1850},
+  year        = {2024},
+  publisher   = {PMLR},
+  abstract    = {Breast density, a crucial risk factor for future breast cancer development, is defined by the ratio of fat to fibro-glandular tissue (FGT) in the breast. Accurate breast and FGT segmentation is essential for robust density estimation. We propose a novel data augmentation technique, motivated by style randomization, to further exploit a multi-modal training setup with and without fat suppression. Networks trained with the proposed augmentation are resilient to variations in fat content and show improved robustness compared to training with multi-modal data alone.},
+  html        = {https://proceedings.mlr.press/v250/yuksel24a.html},
+  pdf         = {https://proceedings.mlr.press/v250/yuksel24a/yuksel24a.pdf},
+  bibtex_show = {true},
+  selected    = {true},
+  pubgroup    = {reviewed}
+}
+
+@inproceedings{baratov2023reproducibility,
+  abbr        = {MLRC},
+  title       = {Reproducibility Study of "Quantifying Societal Bias Amplification in Image Captioning"},
+  author      = {Baratov*, Farrukh and Yüksel*, Göksenin and Petcu*, Darie and Bakker*, Jan},
+  booktitle   = {ML Reproducibility Challenge 2022 (poster at NeurIPS 2023)},
+  year        = {2023},
+  abstract    = {We study the reproducibility of "Quantifying Societal Bias Amplification in Image Captioning" by Hirota et al., which proposes the LIC metric for measuring bias amplification. Our reproduced results support all four main claims of the original paper. We also extend the work by evaluating LIC for age bias, finding that only a subset of the models amplifies age bias.},
+  html        = {https://openreview.net/forum?id=eJmQJT0Dtt},
+  pdf         = {https://openreview.net/pdf?id=eJmQJT0Dtt},
+  annotation  = {* Equal contribution: all four authors are joint first authors.},
+  bibtex_show = {true},
+  pubgroup    = {reviewed}
+}
+
+@article{yuksel2025remining,
+  abbr        = {arXiv},
+  title       = {Remining Hard Negatives for Generative Pseudo Labeled Domain Adaptation},
+  author      = {Yüksel, Göksenin and Rau, David and Kamps, Jaap},
+  journal     = {arXiv preprint arXiv:2501.14434},
+  year        = {2025},
+  abstract    = {Dense retrievers lose much of their effectiveness when the target domain differs from the training data. This work improves Generative Pseudo Labeling (GPL) domain adaptation by re-mining hard negatives, which strengthens the knowledge distillation signal and improves retrieval performance across several benchmark datasets.},
+  html        = {https://arxiv.org/abs/2501.14434},
+  pdf         = {https://arxiv.org/pdf/2501.14434},
+  bibtex_show = {true},
+  pubgroup    = {preprint}
+}
+
+@article{yuksel2025interpretability,
+  abbr        = {arXiv},
+  title       = {Interpretability Analysis of Domain Adapted Dense Retrievers},
+  author      = {Yüksel, Göksenin and Kamps, Jaap},
+  journal     = {arXiv preprint arXiv:2501.14459},
+  year        = {2025},
+  abstract    = {Dense retrievers are not robust across domains, and it is unclear what domain adaptation changes inside them. Using integrated gradients, this work explains how adaptation shifts a retriever's behavior on financial and biomedical datasets: adapted models attend more to domain-specific terms such as "hedge" and "corona", showing how attribution methods can expose the mechanisms behind neural retrieval.},
+  html        = {https://arxiv.org/abs/2501.14459},
+  pdf         = {https://arxiv.org/pdf/2501.14459},
+  bibtex_show = {true},
+  pubgroup    = {preprint}
+}
+
+@article{yuksel2025correlating,
+  abbr        = {arXiv},
+  title       = {On Correlating Factors for Domain Adaptation Performance},
+  author      = {Yüksel, Göksenin and Kamps, Jaap},
+  journal     = {arXiv preprint arXiv:2501.14466},
+  year        = {2025},
+  abstract    = {This work examines which factors explain how well dense retrievers adapt to a new domain. Analyzing the similarity between source and target data, it finds that the distribution of generated query types is an important factor, and that generating queries that match the target domain's query types substantially improves domain adaptation.},
+  html        = {https://arxiv.org/abs/2501.14466},
+  pdf         = {https://arxiv.org/pdf/2501.14466},
+  bibtex_show = {true},
+  pubgroup    = {preprint}
+}

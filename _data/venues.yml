@@ -1,0 +1,21 @@
+"NeurIPS":
+  url: https://neurips.cc/
+  color: "#2f6fde"
+
+"MIDL":
+  url: https://www.midl.io/
+  color: "#2f6fde"
+
+"arXiv":
+  url: https://arxiv.org/
+  color: "#2f6fde"
+
+"CLEF":
+  url: https://clef2024.clef-initiative.eu/
+  color: "#2f6fde"
+
+"Under review":
+  color: "#2f6fde"
+
+"MLRC":
+  color: "#2f6fde"

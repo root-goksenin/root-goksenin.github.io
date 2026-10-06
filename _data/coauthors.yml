@@ -1,0 +1,6 @@
+# Optional: link co-author names to their homepages.
+# Format (key = lowercase last name):
+# "worring":
+#   - firstname: ["Marcel", "M."]
+#     url: https://example.com
+{}
