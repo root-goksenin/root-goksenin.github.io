@@ -239,6 +239,11 @@ a:hover > .hf-logo {
   margin: 0 0 0.5rem;
 }
 
+// CV page: links to a section (e.g. /cv/#education) stop below the fixed navbar.
+.cv h3.card-title {
+  scroll-margin-top: 80px;
+}
+
 // Venue badges on the publications and reading pages: always white text. The theme only makes
 // linked badges white, so badges without a url in _data/venues.yml (MLRC, Under review) showed
 // black text in light mode, and the reading-list badges showed dark text in dark mode.

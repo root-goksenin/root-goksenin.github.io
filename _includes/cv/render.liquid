@@ -1,7 +1,10 @@
 {% comment %}
-  Site override of al_folio_cv 1.0.2 templates/cv/render.liquid.
-  Only change: the Publications template also renders the sections
-  'Peer-Reviewed Publications', 'Under Review' and 'Preprints' from _data/cv.yml.
+  Site override of al_folio_cv 1.0.2 templates/cv/render.liquid. Changes:
+  - the Publications template also renders the sections 'Peer-Reviewed Publications', 'Under Review'
+    and 'Preprints' from _data/cv.yml;
+  - each RenderCV section heading carries the section's id itself, instead of a separate
+    <a class="anchor"> with the same id, so the contents sidebar links to and highlights the right section;
+  - the script at the end lets the last sections scroll up to the top, so the sidebar can highlight them.
 {% endcomment %}
 {% comment %}
   Unified CV layout that handles both RenderCV (YAML) and JSONResume (JSON) formats
@@ -129,9 +132,8 @@
         {% assign vol = cv.sections.Volunteer | default: empty_array %}
         {% assign combined_experience = exp | concat: vol | al_cv_sort_by_date %}
         {% if combined_experience.size > 0 %}
-          <a class="anchor" id="experience"></a>
           <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">Experience</h3>
+            <h3 class="card-title font-weight-medium" id="experience">Experience</h3>
             <div>
               {% assign entries = combined_experience %}
               {% include cv/experience.liquid %}
@@ -149,9 +151,8 @@
             {% continue %}
           {% endif %}
 
-          <a class="anchor" id="{{ section_title | slugify }}"></a>
           <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">{{ section_title }}</h3>
+            <h3 class="card-title font-weight-medium" id="{{ section_title | slugify }}">{{ section_title }}</h3>
             <div>
               {% if section_title == 'Education' %}
                 {% assign entries = section_entries | al_cv_sort_by_date %}
@@ -268,9 +269,8 @@
         {% assign vol = site.data.resume.volunteer | default: empty_array %}
         {% assign combined_experience = work | concat: vol | al_cv_sort_by_date %}
         {% if combined_experience.size > 0 %}
-          <a class="anchor" id="experience"></a>
           <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">Experience</h3>
+            <h3 class="card-title font-weight-medium" id="experience">Experience</h3>
             <div>
               {% assign entries = combined_experience %}
               {% include cv/experience.liquid %}
@@ -392,3 +392,22 @@
     </div>
   </article>
 </div>
+
+<script>
+  // Contents sidebar: it highlights the section whose heading is near the top of the window.
+  // The last sections are too short to scroll up there, so add just enough space below the CV.
+  (function () {
+    function fitBottomSpace() {
+      var cv = document.querySelector(".cv");
+      if (!cv) return;
+      var headings = cv.querySelectorAll("h3.card-title");
+      if (!headings.length) return;
+      cv.style.paddingBottom = "0px";
+      var lastTop = headings[headings.length - 1].getBoundingClientRect().top + window.scrollY;
+      var missing = lastTop - 70 + window.innerHeight - document.documentElement.scrollHeight;
+      cv.style.paddingBottom = Math.max(0, Math.ceil(missing)) + "px";
+    }
+    window.addEventListener("load", fitBottomSpace);
+    window.addEventListener("resize", fitBottomSpace);
+  })();
+</script>
