@@ -52,7 +52,11 @@ papers:
     pdf: https://openaccess.thecvf.com/content/CVPR2024/papers/Majumder_Learning_Spatial_Features_from_Audio-Visual_Correspondence_in_Egocentric_Videos_CVPR_2024_paper.pdf
     status: to-read
     added: 2026-10-06
-
+  - arxiv: https://arxiv.org/abs/2604.11791
+    title: A Mechanistic Analysis of Looped Reasoning Language Models
+    status: to-read
+    added: 2026-10-07
+    
   - arxiv: https://arxiv.org/abs/2609.23407
     title: "OmniEcho: Audio-Visual Spatial Understanding for Omni-Modal Embodied Agents"
     status: to-read
