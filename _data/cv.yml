@@ -41,7 +41,7 @@ cv:
         degree: PhD
         location: Nijmegen, NL
         start_date: 2024-09
-        end_date: 2028-01
+        end_date: 2028-9
         highlights:
           - "Research: machine hearing, self-supervised (spatial) audio and speech representation learning, and spatial audio LLMs."
           - "AudioSphere (NeurIPS 2026): first sound event localization and detection from a frozen self-supervised backbone; 1.9° median direction-of-arrival error on a planar microphone array."
